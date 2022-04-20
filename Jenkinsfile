@@ -9,13 +9,13 @@ pipeline {
 	stages {
 		stage("test") {
 			sh """
-               		echo "test Artifact"
+               		echo "test Artifact stream"
                		"""
 		}
 		stage('Build Code') {
            	steps {
                	sh """
-               	echo "Building Artifact"
+               	echo "Building Artifact stream"
                	"""
            	}
        	}
