@@ -1,10 +1,4 @@
 pipeline {
-	agent none
-
-	options {
-		disableConcurrentBuilds()
-		buildDiscarder(logRotator(numToKeepStr: '14'))
-	}
 
 	stages {
 		stage('Test Code') {
