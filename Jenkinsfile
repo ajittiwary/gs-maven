@@ -1,25 +1,21 @@
 pipeline {
-	agent none
-
-	options {
-		disableConcurrentBuilds()
-		buildDiscarder(logRotator(numToKeepStr: '14'))
-	}
-
-	stages {
-		stage('Test Code') {
-           	steps {
-               	sh """
-               	echo "TEST Artifact"
-               	"""
-           	}
-		}
-		stage('Build Code') {
-           	steps {
-               	sh """
-               	echo "Building Artifact"
-               	"""
-           	}
-       	}
-}
+ agent none
+  stages {
+    stage('Back-end-main') {
+      agent {
+        docker { image 'maven:3.8.1-adoptopenjdk-11' }
+      }
+      steps {
+        sh 'mvn --version'
+      }
+    }
+    stage('Front-end-main') {
+      agent {
+        docker { image 'node:16-alpine' }
+      }
+      steps {
+        sh 'node --version'
+      }
+    }
+  }
 }
