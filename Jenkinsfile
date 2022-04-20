@@ -13,6 +13,7 @@ pipeline {
                	echo "TEST Artifact"
                	"""
            	}
+		}
 		stage('Build Code') {
            	steps {
                	sh """
