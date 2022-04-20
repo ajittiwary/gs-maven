@@ -7,11 +7,12 @@ pipeline {
 	}
 
 	stages {
-		stage("test") {
-			sh """
-               		echo "test Artifact"
-               		"""
-		}
+		stage('Test Code') {
+           	steps {
+               	sh """
+               	echo "TEST Artifact"
+               	"""
+           	}
 		stage('Build Code') {
            	steps {
                	sh """
