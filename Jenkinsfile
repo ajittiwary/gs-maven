@@ -10,7 +10,7 @@ pipeline {
 		stage('Test Code') {
            	steps {
                	sh """
-               	echo "Test Artifact"
+               	echo "Test Artifact stream"
                	"""
            	}
 		stage('Build Code') {
