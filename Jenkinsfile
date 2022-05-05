@@ -7,6 +7,7 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
+        sh 'mvn --version'
       }
     }
     stage('Front-end-main') {
